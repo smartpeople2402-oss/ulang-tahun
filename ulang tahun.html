@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#24151f" />
+<title>Untuk Khairunnisa — 21 & Sebuah Masa Depan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+  :root{--ink:#261720;--plum:#392333;--plum2:#583849;--rose:#d99b9d;--rose-light:#f4dedb;--cream:#fff8f0;--gold:#d9b779;--muted:#78666f;--line:rgba(72,43,58,.14);--white:#fffdfb;--green:#52675c;}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+  button,a{font:inherit}
+  a{color:inherit}
+  .topbar{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:15px clamp(18px,5vw,72px);background:rgba(255,248,240,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(72,43,58,.08)}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.04em;font-size:.88rem}
+  .brand-mark{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--plum);color:var(--gold);font-size:17px}
+  .nav{display:flex;gap:22px;align-items:center;font-size:.82rem;color:var(--muted)}.nav a{text-decoration:none}.nav a:hover{color:var(--plum)}
+  .nav-cta{border:1px solid var(--line);padding:9px 14px;border-radius:999px;text-decoration:none!important;color:var(--plum)!important;background:#fff9}
+  .hero{min-height:calc(100vh - 62px);position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 15% 15%,rgba(217,155,157,.16),transparent 34%),radial-gradient(ellipse at 85% 75%,rgba(217,183,121,.18),transparent 30%),linear-gradient(135deg,#fff9f2 0%,#f7e9e5 48%,#fff7ed 100%);padding:80px 22px 94px;text-align:center}
+  .hero:before,.hero:after{content:'';position:absolute;border:1px solid rgba(160,111,127,.18);border-radius:50%;pointer-events:none}.hero:before{width:min(76vw,760px);height:min(76vw,760px)}.hero:after{width:min(60vw,600px);height:min(60vw,600px)}
+  .hero-inner{position:relative;z-index:2;max-width:870px}
+  .eyebrow{display:inline-flex;gap:10px;align-items:center;text-transform:uppercase;letter-spacing:.22em;font-size:.72rem;font-weight:700;color:#986b76}.eyebrow:before,.eyebrow:after{content:'';width:28px;height:1px;background:var(--gold)}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.12;margin:0}
+  .hero h1{font-size:clamp(3.1rem,8vw,7.1rem);letter-spacing:-.045em;color:var(--plum);margin:24px 0 10px}.hero h1 em{font-weight:400;color:#ae777f}
+  .hero-sub{max-width:570px;margin:19px auto 0;color:#6f5963;font-size:clamp(1rem,2.1vw,1.14rem)}
+  .date-pill{display:inline-flex;align-items:center;gap:9px;margin:26px 0 29px;padding:9px 15px;border:1px solid rgba(152,107,118,.24);border-radius:999px;color:var(--plum);font-size:.85rem;background:rgba(255,255,255,.52)}
+  .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;border:0;border-radius:999px;padding:14px 21px;cursor:pointer;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;font-size:.9rem}
+  .btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--plum);color:#fff8f1;box-shadow:0 10px 26px rgba(57,35,51,.18)}.btn-primary:hover{background:#4b2d42}.btn-secondary{color:var(--plum);border:1px solid rgba(57,35,51,.18);background:rgba(255,255,255,.6)}
+  .scroll-note{position:absolute;bottom:25px;z-index:2;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#9a7d85;display:flex;flex-direction:column;align-items:center;gap:6px}.scroll-line{height:27px;width:1px;background:linear-gradient(var(--rose),transparent)}
+  .sparkle{position:absolute;z-index:1;color:#c6a16d;opacity:.8;animation:float 5s ease-in-out infinite}.s1{top:16%;left:14%;font-size:24px}.s2{top:27%;right:13%;font-size:17px;animation-delay:-2s}.s3{bottom:19%;left:21%;font-size:14px;animation-delay:-1s}.s4{bottom:24%;right:18%;font-size:26px;animation-delay:-3s}
+  @keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(15deg)}}
+  .section{padding:92px clamp(20px,7vw,100px)}.section-inner{max-width:1100px;margin:0 auto}.section-kicker{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#ab7883;margin-bottom:15px}.section-title{font-size:clamp(2.2rem,4.6vw,4rem);color:var(--plum);letter-spacing:-.035em}.section-lead{color:var(--muted);max-width:650px;font-size:1.02rem;margin:20px 0 0}
+  .letter-section{background:var(--white)}.letter-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(35px,7vw,88px);align-items:center}
+  .letter-art{position:relative;min-height:430px;display:grid;place-items:center;border-radius:28px;background:radial-gradient(circle at 50% 38%,#fff5e8 0%,#f0d9d7 58%,#e7c6cb 100%);overflow:hidden;border:1px solid rgba(72,43,58,.08)}
+  .letter-art:before{content:'';position:absolute;width:310px;height:310px;border-radius:50%;border:1px solid rgba(255,255,255,.65)}.letter-art:after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;border:1px solid rgba(255,255,255,.65)}
+  .envelope{width:220px;height:148px;background:#fff9ed;position:relative;z-index:2;border-radius:4px;box-shadow:0 22px 50px rgba(79,45,55,.18);transform:rotate(-5deg);display:grid;place-items:center}.envelope:before{content:'';position:absolute;inset:0;background:linear-gradient(140deg,transparent 49.5%,#e5c4c0 50%,transparent 50.7%),linear-gradient(220deg,transparent 49.5%,#e5c4c0 50%,transparent 50.7%)}.seal{width:48px;height:48px;border-radius:50%;background:var(--plum);color:var(--gold);display:grid;place-items:center;font-size:23px;box-shadow:0 5px 12px #39233330;z-index:2}
+  .art-caption{position:absolute;bottom:27px;z-index:2;text-align:center;color:#7e5f69;font-family:'Playfair Display',Georgia,serif;font-style:italic}
+  .letter-copy{font-family:'Playfair Display',Georgia,serif;font-size:1.12rem;line-height:1.9;color:#594650}.letter-copy p{margin:0 0 18px}.letter-copy .salutation{font-size:1.55rem;color:var(--plum)}.signature{font-size:1.45rem;font-style:italic;color:#a56f7a;margin-top:23px}
+  .gift-section{background:var(--plum);color:#fff8f1;position:relative;overflow:hidden}.gift-section:before{content:'✦';position:absolute;right:8%;top:6%;font-size:180px;color:#ffffff08}.gift-section .section-kicker{color:#dfb9bd}.gift-section .section-title{color:#fff6ed}.gift-section .section-lead{color:#d5c1ca}
+  .gift-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}.gift-card{position:relative;padding:34px clamp(24px,4vw,42px);border:1px solid rgba(255,255,255,.16);border-radius:24px;background:linear-gradient(155deg,rgba(255,255,255,.085),rgba(255,255,255,.025));min-height:285px;overflow:hidden}.gift-card.featured{border-color:rgba(217,183,121,.55);background:linear-gradient(140deg,rgba(217,183,121,.14),rgba(255,255,255,.035))}.card-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.17em;color:#dbb8bc;font-weight:700}.big-number{font-family:'Playfair Display',Georgia,serif;font-size:clamp(4.7rem,8vw,7rem);line-height:1.1;letter-spacing:-.06em;color:#f6dcd6;margin:18px 0 9px}.featured .big-number{color:var(--gold)}.gift-card h3{font-size:1.35rem;margin-bottom:12px}.gift-card p{color:#d6c5cc;font-size:.91rem;margin:0}.gift-card .small-note{display:block;margin-top:18px;font-size:.76rem;line-height:1.55;color:#b69da9}
+  .roadmap-section{background:#fbf3ec}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}.step{border-top:1px solid #d9b8b6;padding:23px 22px 20px;background:rgba(255,255,255,.55);border-radius:0 0 16px 16px}.step-num{width:34px;height:34px;border-radius:50%;background:#f0d9d7;color:#7b4c5a;display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-bottom:22px}.step h3{font-size:1.25rem;margin-bottom:11px;color:var(--plum)}.step p{font-size:.88rem;color:var(--muted);margin:0}.step small{display:block;color:#a0717d;font-weight:700;margin-top:13px;font-size:.74rem}
+  .draft-section{background:#fffdfb}.draft-head{display:flex;justify-content:space-between;align-items:end;gap:22px;flex-wrap:wrap;margin-bottom:28px}.draft-actions{display:flex;gap:10px;flex-wrap:wrap}.draft-paper{background:#fff;padding:clamp(23px,5vw,58px);border:1px solid #e7ded8;box-shadow:0 15px 60px rgba(46,29,39,.06);max-width:900px;margin:0 auto;border-radius:4px}.paper-top{text-align:center;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:28px}.paper-top .mini{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#a77881;font-weight:700}.paper-top h2{font-size:clamp(1.55rem,3.5vw,2.3rem);margin:11px auto 13px;max-width:700px;color:var(--plum)}.paper-top p{font-size:.85rem;color:#8c7880;margin:0}.draft-text{font-family:Georgia,'Times New Roman',serif;font-size:.95rem;line-height:1.85;color:#352731}.draft-text h3{font-family:'DM Sans',Arial,sans-serif;font-size:.91rem;letter-spacing:.04em;text-transform:uppercase;color:#805361;margin:27px 0 8px}.draft-text p{margin:9px 0}.draft-text ol{padding-left:22px}.draft-text li{padding-left:5px;margin:6px 0}.blank{color:#956c76;font-style:italic;background:#fcf0ed;padding:0 3px}.signature-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:40px}.signature-box{min-height:125px;border-top:1px solid #d9cbc9;padding-top:12px;font-size:.82rem;color:#6e5962}.signature-line{height:55px}
+  .legal-note{max-width:900px;margin:17px auto 0;padding:15px 17px;border-left:3px solid var(--gold);background:#fbf4eb;color:#76636b;font-size:.8rem}.legal-note strong{color:#59414d}
+  .promise-section{background:linear-gradient(145deg,#f4e0dc,#fff8ef);text-align:center}.promise-inner{max-width:810px;margin:0 auto}.promise-heart{font-size:45px;color:#b47c86;margin-bottom:20px}.promise-section .section-title{max-width:730px;margin:auto}.promise-quote{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.22rem,2.5vw,1.7rem);line-height:1.55;color:#7f5864;max-width:680px;margin:26px auto 32px}
+  footer{background:#251720;color:#c8b7c1;padding:28px clamp(20px,5vw,70px);font-size:.76rem;display:flex;gap:16px;justify-content:space-between;align-items:center;flex-wrap:wrap}footer a{color:#ead3d1;text-decoration:none;border-bottom:1px solid #806574}footer .footer-brand{font-weight:700;letter-spacing:.07em;color:#f5e6df}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#2d1c28;color:#fff7f0;padding:12px 18px;border-radius:999px;box-shadow:0 10px 30px #27162130;font-size:.86rem;transition:.25s;z-index:80}.toast.show{opacity:1;transform:translate(-50%,0)}
+  .heart-float{position:fixed;bottom:-30px;z-index:70;pointer-events:none;animation:heartUp 3.5s ease-in forwards;font-size:20px;color:#b86e83;text-shadow:0 2px 10px #b86e8330}@keyframes heartUp{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.9}100%{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+  @media(max-width:760px){.nav a:not(.nav-cta){display:none}.hero{min-height:790px;min-height:calc(100svh - 60px)}.letter-grid{grid-template-columns:1fr}.letter-art{min-height:330px}.gift-cards{grid-template-columns:1fr}.gift-card{min-height:260px}.roadmap{grid-template-columns:1fr}.step{padding:20px}.signature-grid{grid-template-columns:1fr;gap:18px}.section{padding-top:70px;padding-bottom:70px}.draft-head{align-items:start}.s1{left:7%}.s2{right:7%}}
+  @media print{body{background:white!important;color:#000}.topbar,.hero,.letter-section,.gift-section,.roadmap-section,.promise-section,footer,.draft-head,.legal-note,.toast{display:none!important}.draft-section{padding:0!important;background:white!important}.draft-section .section-inner{max-width:none!important}.draft-section .section-kicker,.draft-section .section-title,.draft-section .section-lead{display:none!important}.draft-paper{box-shadow:none!important;border:none!important;border-radius:0!important;padding:0!important;max-width:none!important}.draft-text{font-size:11pt}.paper-top h2{font-size:17pt}.blank{background:none!important;color:#000}.signature-box{break-inside:avoid}.signature-grid{gap:20px}}
+
+  /* Romantic interactive layer */
+  .nav-tools{margin-left:auto;margin-right:18px;display:flex;align-items:center}
+  .sound-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(57,35,51,.17);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.68);color:var(--plum);font-size:.78rem;font-weight:700;cursor:pointer;transition:all .25s;white-space:nowrap}
+  .sound-toggle:hover,.sound-toggle[aria-pressed="true"]{background:var(--plum);color:#fff7ef;box-shadow:0 8px 22px #39233320;transform:translateY(-1px)}
+  .sound-toggle[aria-pressed="true"]{border-color:var(--gold)}
+  .hero{background-size:150% 150%;animation:heroGlow 18s ease-in-out infinite alternate}
+  @keyframes heroGlow{0%{background-position:0% 45%}100%{background-position:100% 55%}}
+  .hero:before{animation:orbit 30s linear infinite}
+  .hero:after{animation:orbit 24s linear infinite reverse}
+  @keyframes orbit{to{transform:rotate(360deg)}}
+  .brand-mark{animation:markPulse 4s ease-in-out infinite}
+  @keyframes markPulse{0%,100%{box-shadow:0 0 0 0 #d9b77900}50%{box-shadow:0 0 0 7px #d9b77920}}
+  .btn{position:relative;overflow:hidden;isolation:isolate}
+  .btn:after{content:"";position:absolute;inset:auto;width:12px;height:12px;border-radius:50%;background:#ffffff60;transform:scale(0);opacity:0;z-index:-1;transition:transform .55s,opacity .55s}
+  .btn:active:after{transform:scale(22);opacity:1;transition:0s}
+  .gift-card{transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+  .gift-card:hover{transform:translateY(-7px);border-color:#d9b77999;box-shadow:0 18px 38px #160b162f}
+  .big-number{transition:transform .35s ease,text-shadow .35s ease}
+  .gift-card:hover .big-number{transform:scale(1.055);text-shadow:0 0 26px #d9b77940}
+  .step{transition:transform .3s ease,box-shadow .3s ease}
+  .step:hover{transform:translateY(-5px);box-shadow:0 14px 28px #4a25300c}
+  .letter-art{cursor:pointer;transition:transform .4s ease,box-shadow .4s ease;perspective:800px}
+  .letter-art:hover{transform:translateY(-4px);box-shadow:0 18px 44px #8b59631a}
+  .envelope{transition:transform .65s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease;transform-style:preserve-3d}
+  .envelope-flap{position:absolute;left:0;top:0;width:100%;height:56%;z-index:4;transform-origin:top center;background:linear-gradient(150deg,#f1d9d1,#e7c2c5);clip-path:polygon(0 0,100% 0,50% 100%);transition:transform .6s ease;backface-visibility:hidden}
+  .letter-peek{position:absolute;top:7px;left:12px;right:12px;height:100px;display:grid;place-items:center;background:#fffdf8;color:#9d6c78;font-family:'Playfair Display',Georgia,serif;font-style:italic;opacity:0;transform:translateY(16px);transition:all .45s ease;z-index:1}
+  .envelope:before{z-index:3}
+  .letter-art.is-open .envelope{transform:translateY(-5px) rotate(0deg) scale(1.04);box-shadow:0 28px 58px #4f2d3733}
+  .letter-art.is-open .envelope-flap{transform:rotateX(180deg);z-index:0}
+  .letter-art.is-open .letter-peek{opacity:1;transform:translateY(-32px)}
+  .letter-art.is-open .seal{animation:sealPop .5s ease both}
+  @keyframes sealPop{0%{transform:scale(1)}50%{transform:scale(1.35) rotate(-12deg)}100%{transform:scale(1)}}
+  .art-action{position:absolute;top:23px;left:0;right:0;text-align:center;color:#966d78;font-weight:700;font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;opacity:.8;transition:opacity .25s}
+  .letter-art.is-open .art-action{opacity:0}
+  .promise-heart{display:inline-block;animation:heartBeat 1.6s ease-in-out infinite;transform-origin:center}
+  @keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.12)}60%{transform:scale(1)}}
+  .love-fab{position:fixed;right:22px;bottom:22px;z-index:60;display:flex;align-items:center;gap:9px;border:1px solid #ffffff50;border-radius:999px;padding:11px 16px;background:linear-gradient(135deg,#6f4058,#392333);color:#fff9f0;box-shadow:0 12px 30px #39233340;cursor:pointer;transition:transform .25s,box-shadow .25s}
+  .love-fab:hover{transform:translateY(-4px) scale(1.025);box-shadow:0 17px 35px #39233355}
+  .fab-heart{font-size:1.2rem;color:#f1bdc7;animation:heartBeat 1.5s ease-in-out infinite}
+  .fab-label{font-size:.78rem;font-weight:700;letter-spacing:.02em}
+  .heart-float{position:fixed;bottom:-35px;z-index:70;pointer-events:none;animation:heartUp 3.5s ease-in forwards;font-size:20px;color:#b86e83;text-shadow:0 2px 10px #b86e8330;filter:drop-shadow(0 4px 8px #b86e8325)}
+  @keyframes heartUp{0%{transform:translate3d(0,0,0) rotate(-12deg) scale(.55);opacity:0}12%{opacity:.96}55%{transform:translate3d(22px,-55vh,0) rotate(17deg) scale(1.05)}100%{transform:translate3d(-20px,-112vh,0) rotate(-22deg) scale(.85);opacity:0}}
+  .ambient-heart{position:fixed;left:var(--left);bottom:-45px;z-index:3;pointer-events:none;color:#c1788b;opacity:0;animation:ambientRise var(--duration) linear var(--delay) infinite;font-size:var(--size);filter:drop-shadow(0 3px 8px #b86e831c)}
+  @keyframes ambientRise{0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}8%{opacity:var(--alpha)}85%{opacity:var(--alpha)}100%{transform:translateY(-115vh) rotate(var(--spin)) scale(1.12);opacity:0}}
+  .toast{box-shadow:0 12px 35px #39233325}
+  .toast.show{animation:toastIn .35s cubic-bezier(.18,.8,.2,1) both}
+  @keyframes toastIn{from{opacity:0;transform:translate(-50%,15px) scale(.97)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+  .motion-reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .motion-reveal.revealed{opacity:1;transform:translateY(0)}
+  .motion-reveal[data-delay="1"]{transition-delay:.1s}.motion-reveal[data-delay="2"]{transition-delay:.2s}.motion-reveal[data-delay="3"]{transition-delay:.3s}
+  @media(max-width:760px){.topbar{gap:8px;flex-wrap:wrap}.brand{font-size:.77rem}.nav-tools{margin:0 0 0 auto}.sound-toggle{padding:8px 10px}.nav{width:100%;justify-content:space-between;gap:10px;font-size:.78rem}.nav a:not(.nav-cta){display:block}.nav-cta{padding:7px 10px}.hero{background-size:220% 220%}.love-fab{right:13px;bottom:14px;padding:10px 13px}.fab-label{display:none}.letter-art{min-height:330px}}
+  @media(max-width:420px){.brand span[style]{display:none}.brand{max-width:55%;gap:7px}.nav{font-size:.72rem}.nav-cta{font-size:.72rem}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.motion-reveal{opacity:1;transform:none}}
+  @media print{.sound-toggle,.love-fab,.ambient-heart,.heart-float{display:none!important}}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#awal" aria-label="Kembali ke awal"><span class="brand-mark">✦</span><span> <span style="font-weight:400;color:#9b7883">A LETTER FOR YOU</span></span></a>
+  <div class="nav-tools"><button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" title="Aktifkan efek suara">♫ <span id="soundLabel">Suara: Mati</span></button></div>
+  <nav class="nav" aria-label="Navigasi utama"><a href="#surat">Surat</a><a href="#hadiah">Hadiah</a><a href="#komitmen">Komitmen</a><a class="nav-cta" href="#draf">Lihat draf ↗</a></nav>
+</header>
+<main>
+<section class="hero" id="awal">
+  <span class="sparkle s1">✧</span><span class="sparkle s2">✦</span><span class="sparkle s3">✧</span><span class="sparkle s4">✦</span>
+  <div class="hero-inner">
+    <div class="eyebrow">A little gift, a big promise</div>
+    <h1>Untuk The One and Only<em>Icha</em></h1>
+    <p class="hero-sub">Untuk ulang tahunmu yang ke-21, Semoga Hadiah Ini Bisa Menajadi Kado yang Istimewa.</p>
+    <div class="date-pill"><span>♡</span> Senin, 2 November 2026 <span>·</span> Chapter 21</div>
+    <div class="actions"><button class="btn btn-primary" id="openLetter">Buka surat untukmu <span>↘</span></button><a class="btn btn-secondary" href="#hadiah">Lihat hadiahmu <span>♡</span></a></div>
+  </div>
+  <div class="scroll-note">A story made for you <span class="scroll-line"></span></div>
+</section>
+
+<section class="section letter-section" id="surat">
+ <div class="section-inner letter-grid">
+  <div class="letter-art" id="interactiveEnvelope" role="button" tabindex="0" aria-label="Sentuh untuk membuka amplop dan menebarkan hati" title="Sentuh amplopnya"><div class="envelope"><div class="envelope-flap"></div><div class="letter-peek">Untukmu, Icha ♡</div><div class="seal">♡</div></div><div class="art-caption">Dari hati, untuk masa depan.</div><div class="art-action">Sentuh amplopnya ♡</div></div>
+  <div>
+   <div class="section-kicker">Sebelum semuanya</div>
+   <h2 class="section-title">Sedikit Ucapan untuk Ketidak Hadiran di Hari Bahagia</h2>
+   <div class="letter-copy" style="margin-top:25px">
+    <p class="salutation">Untuk Khairunnisa Rahmahdani Danang,</p>
+    <p>Selamat ulang tahun ke-21, sayang.</p>
+    <p>Selamat ulang tahun sayang yang ke-21, semoga di ulang tahun nya kali ini bisa menjadi orang  yang jauh lebih baik, lancar semua urusan nya, lancar kuliah nya, lancar ujian semester nya nanti. Apalagi next semester bakalan ada tugas akhirr hihihihihi seremmm. Tapi tenang aja kan ada aku hihihhih.</p>
+    <p>Sebelumnya aku mohon maaf yaa belum bisa merayakan ulang tahun si mbak nya secara langsung. Harusnya ulang tahun si mbak nya dirayakan secara langsung di sana hihihi. Kalau bisa aku langsung ke ausi sihhh trus jalan-jalan di kota Brisbane azikkkk. </p>
+    <p>Trus maaf juga yaa sayang, kalau aku liat teman-teman aku atau mungkin teman-teman  si mbaknya, jika merayakan ulang tahun pasti kayak di tempat-tempat wow luxalary sekali hihiih hadiah nya bunga gede trus di meja private dengan background kelap kelip kota ihiwww, mungkin aku belum bisa yaaa, aku belum bisa kasih Hadiah yang mewah, jam mahal, tas branded wow baget lah pokok nya untuk si mbak nya. Tapi aku pastiin sih  nanti dalam waktu dekat ini atau gak tahu kapan hihihihi aku bakalan beliin si mbak nya everything that u want,,, mau apa? Lv, Hermes, dior semua nya aku kasihh... tapi foto nya aja hihiihihi gak lah. Asli dari asal nya aku beli. Tapi sabar duluu yaaa lagi prosesss nii hihihi…</p>
+    <p>Sebagai Ganti nya, aku ada hadiah untuk si mbak nya Dimana untuk keuntungan bersih quick check ini aku kasih sepenuh nya sebesar 65% dan Ketika Perusahaan ini bertransformasi menjadi PT Perseroan maka 65% saham nya dipegang oleh si mbak nya, semoga hadiah ini bisa menjadi kado Istimewa di ulang thun nya ke 21.</p>
+    <div class="signature">Sekali lagi selamat ulang tahun sayanggggg……  ♡</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section gift-section" id="hadiah">
+ <div class="section-inner">
+  <div class="section-kicker">Your birthday gift</div>
+  <h2 class="section-title">Dua bab Komitmen.</h2>
+  <p class="section-lead">Selagi perusahaan masih berbentuk Perseroan Perorangan, hadiah dirancang sebagai hak manfaat ekonomi berdasarkan perjanjian tertulis. Setelah bentuk perseroan diubah secara sah, targetnya adalah kepemilikan saham.</p>
+  <div class="gift-cards">
+   <article class="gift-card featured"><div class="card-label">Bab 01 · Saat ini</div><div class="big-number">65<small style="font-size:.42em">%</small></div><h3>Bagian laba bersih yang dibagikan</h3><p>Komitmen pembagian sebesar 65% dari laba bersih yang dapat dibagikan, dihitung berdasarkan laporan keuangan dan ketentuan tertulis yang disepakati.</p><span class="small-note">Bukan saham dan bukan dividen pemegang saham selama perusahaan masih berbentuk PT Perorangan.</span></article>
+   <article class="gift-card"><div class="card-label">Bab 02 · Saat transformasi</div><div class="big-number">65<small style="font-size:.42em">%</small></div><h3>Kepemilikan saham yang dituju</h3><p>Ketika perusahaan beralih menjadi Perseroan Persekutuan Modal, komitmen untuk mewujudkan kepemilikan 65% saham atas nama Khairunnisa melalui proses hukum yang tepat.</p><span class="small-note">Perlu akta notaris, administrasi perseroan, pencatatan pemegang saham, dan dokumen final yang sah.</span></article>
+  </div>
+ </div>
+</section>
+
+<section class="section roadmap-section" id="komitmen">
+ <div class="section-inner">
+  <div class="section-kicker">A promise with a plan</div>
+  <h2 class="section-title">komitmen yang jelas.</h2>
+  <p class="section-lead">Supaya hadiah ini bukan hanya terasa istimewa, tetapi juga disusun dengan transparan dan bertanggung jawab.</p>
+  <div class="roadmap">
+   <article class="step"><div class="step-num">01</div><h3>Disepakati bersama</h3><p>Kita isi identitas dan rincian yang masih kosong, memahami definisi laba, jadwal pembayaran, akses laporan, serta hak dan kewajiban masing-masing pihak.</p><small>TERBUKA & TERUKUR</small></article>
+   <article class="step"><div class="step-num">02</div><h3>Dibuat tertulis</h3><p>Kesepakatan manfaat ekonomi selama tahap PT Perorangan dituangkan dalam perjanjian yang ditinjau profesional, dengan memperhatikan pajak dan struktur usaha.</p><small>JELAS & BISA DITINJAU</small></article>
+   <article class="step"><div class="step-num">03</div><h3>Disahkan saat waktunya</h3><p>Ketika menjadi PT Persekutuan Modal, proses perubahan status dan target 65% kepemilikan saham ditata melalui notaris serta pencatatan resmi yang diperlukan.</p><small>SAH & TERCATAT</small></article>
+  </div>
+ </div>
+</section>
+
+<section class="section draft-section" id="draf">
+ <div class="section-inner">
+  <div class="draft-head">
+   <div><div class="section-kicker">The written promise</div><h2 class="section-title">Rancangan pernyataan komitmen.</h2><p class="section-lead">Draf awal yang dapat disunting bersama sebelum ditandatangani.</p></div>
+   <div class="draft-actions"><button class="btn btn-secondary" id="copyDraft">Salin draf ⧉</button><button class="btn btn-primary" id="printDraft">Cetak / Simpan PDF ↗</button></div>
+  </div>
+  <article class="draft-paper" id="draftPaper">
+   <div class="paper-top"><div class="mini">Rancangan — untuk ditinjau bersama</div><h2>PERNYATAAN KOMITMEN PEMBERIAN MANFAAT EKONOMI DAN RENCANA KEPEMILIKAN SAHAM</h2><p>PT CEKCEPAT GUNANSA EDUKASI · 2 November 2026</p></div>
+   <div class="draft-text" id="draftText">
+    <p>Pada tanggal <strong>2 November 2026</strong>, para pihak di bawah ini menyatakan niat dan komitmen untuk menyusun kesepakatan tertulis dengan itikad baik:</p>
+    <p><strong>1. Pihak Pertama / Pemilik dan Pemberi Komitmen Saham</strong><br>Nama: <span class="blank">Kohan Gunawan</span><br>Nomor identitas dan alamat: <span class="blank">[Diisi pada dokumen final, tidak untuk dipublikasikan]</span><br>Kedudukan: Pendiri/pemilik tunggal Perseroan Perorangan PT CEKCEPAT GUNANSA EDUKASI.</p>
+    <p><strong>2. Pihak Kedua / Penerima Komitmen</strong><br>Nama: <strong>Khairunnisa Rahmahdani Danang</strong><br>Nomor identitas dan alamat: <span class="blank">[Diisi pada dokumen final]</span></p>
+    <p><strong>3. Perseroan / Pihak yang akan terkait dengan pelaksanaan manfaat ekonomi</strong><br>Nama: <strong>PT CEKCEPAT GUNANSA EDUKASI</strong> (Perseroan Perorangan)<br>Diwakili oleh: <span class="blank">Kohan Gunawan</span><br>Alamat dan data badan hukum: <span class="blank">[Diisi dalam dokumen final]</span><br><em>Catatan: Perseroan perlu menjadi pihak yang menandatangani dokumen final apabila kewajiban pembayaran dibebankan pada Perseroan, setelah mekanisme dan perlakuan pajaknya ditelaah.</em></p>
+    <p>Pihak Pertama, Pihak Kedua, dan Perseroan selanjutnya disebut “Para Pihak” sesuai kapasitas masing-masing.</p>
+
+    <h3>Pasal 1 — Maksud dan tujuan</h3>
+    <p>Pihak Pertama menyatakan niat untuk memastikan Pihak Kedua memperoleh manfaat ekonomi dari usaha PT CEKCEPAT GUNANSA EDUKASI (“Perseroan”), serta berkomitmen mengupayakan kepemilikan saham bagi Pihak Kedua setelah perubahan status Perseroan dilaksanakan sesuai ketentuan hukum. Kewajiban pembayaran yang dibebankan kepada Perseroan wajib disetujui dan ditandatangani oleh pihak yang berwenang mewakili Perseroan. Rincian yang mengikat akan dituangkan dalam perjanjian final dan dokumen korporasi yang sesuai.</p>
+
+    <h3>Pasal 2 — Manfaat ekonomi selama Perseroan Perorangan</h3>
+    <ol>
+     <li>Selama Perseroan masih berbentuk Perseroan Perorangan, Para Pihak bermaksud menetapkan manfaat ekonomi untuk Pihak Kedua sebesar <strong>65% (enam puluh lima persen) dari laba bersih yang disepakati sebagai dasar pembagian</strong> untuk setiap periode yang ditentukan Para Pihak. Pihak yang berkewajiban melakukan pembayaran (Pihak Pertama secara pribadi dan/atau Perseroan, sesuai struktur final yang disetujui secara sah) harus dinyatakan secara tegas dalam perjanjian final.</li>
+     <li>Untuk keperluan perhitungan, “laba bersih yang menjadi dasar pembagian” perlu didefinisikan dalam perjanjian final berdasarkan laporan keuangan, setelah memperhitungkan biaya usaha yang wajar, kewajiban pajak, kewajiban kepada kreditur, kerugian yang relevan, dan cadangan usaha yang disepakati secara tertulis. Nilai ini bukan 65% dari omzet atau pendapatan kotor.</li>
+     <li>Periode laporan dan pembayaran: <span class="blank">[contoh: setiap triwulan, dibayarkan paling lambat 30 hari setelah laporan disetujui]</span>. Metode pembayaran: <span class="blank">[transfer ke rekening atas nama Pihak Kedua / metode lain yang disepakati]</span>.</li>
+     <li>Apabila pada periode terkait tidak terdapat laba positif berdasarkan dasar perhitungan yang disepakati, tidak ada pembayaran manfaat laba untuk periode tersebut, kecuali Para Pihak menyepakati lain secara tertulis.</li>
+     <li>Para Pihak memahami bahwa pengaturan pada tahap ini merupakan rancangan manfaat ekonomi berdasarkan perjanjian, <strong>bukan pengalihan saham</strong>, bukan pemberian status pemegang saham, dan tidak dengan sendirinya memberikan hak suara atau hak korporasi kepada Pihak Kedua dalam Perseroan Perorangan. Mekanisme dan pencatatan pembayaran harus mengikuti nasihat profesional mengenai hukum perusahaan, akuntansi, dan perpajakan.</li>
+    </ol>
+
+    <h3>Pasal 3 — Rencana kepemilikan 65% saham setelah perubahan status</h3>
+    <ol>
+     <li>Apabila Perseroan berubah status menjadi Perseroan Persekutuan Modal, Pihak Pertama berkomitmen untuk menindaklanjuti pemberian/pengalihan sehingga Pihak Kedua ditargetkan memiliki <strong>65% (enam puluh lima persen) dari seluruh saham yang ditempatkan dan disetor</strong> setelah struktur modal final disepakati, dengan tetap tunduk pada ketentuan hukum dan penyelesaian dokumen yang diperlukan.</li>
+     <li>Mekanisme, jumlah saham, nilai nominal, sumber saham, perlakuan atas modal dan kewajiban yang sudah ada, tanggal efektif, serta dokumen pengalihan/penempatan saham akan ditentukan bersama dan dituangkan melalui akta notaris serta pencatatan dalam daftar pemegang saham dan administrasi yang diwajibkan.</li>
+     <li>Para Pihak memahami bahwa Perseroan Perorangan yang memiliki lebih dari satu pemegang saham perlu mengubah status menjadi Perseroan Persekutuan Modal melalui akta notaris dan pendaftaran elektronik sesuai peraturan yang berlaku. Karena itu, target saham ini belum dianggap selesai hanya dengan halaman hadiah atau draf ini.</li>
+    </ol>
+
+    <h3>Pasal 4 — Transparansi dan itikad baik</h3>
+    <p>Pihak Pertama akan menyediakan ringkasan laporan keuangan yang relevan untuk memeriksa perhitungan manfaat ekonomi, dengan tetap menjaga kerahasiaan data Perseroan. Para Pihak sepakat berdiskusi secara terbuka apabila terdapat perbedaan perhitungan, perubahan keadaan usaha, atau kebutuhan untuk menyesuaikan mekanisme yang disepakati.</p>
+
+    <h3>Pasal 5 — Pajak, biaya, dan kepatuhan</h3>
+    <p>Para Pihak akan meminta nasihat notaris dan/atau konsultan pajak mengenai bentuk perjanjian manfaat ekonomi, kewajiban perpajakan, dan cara pemberian/pengalihan saham yang sesuai. Masing-masing pihak memenuhi kewajiban pajak dan administrasi yang menurut hukum menjadi tanggung jawabnya.</p>
+
+    <h3>Pasal 6 — Dokumen final dan status draf</h3>
+    <p>Dokumen ini merupakan <strong>rancangan awal pemberian hadiah dan komitmen</strong>, bukan akta pengalihan saham dan bukan pengganti akta notaris atau perjanjian final. Ketentuan yang mengikat baru ditetapkan setelah identitas, definisi laba, periode, tata cara pembayaran, mekanisme saham, dan ketentuan lain disetujui Para Pihak, dituangkan dalam dokumen final, dan ditandatangani secara sah sesuai hukum.</p>
+
+    <p>Demikian rancangan ini dibuat sebagai dasar pembicaraan dengan itikad baik, tanpa mengurangi kebutuhan untuk memenuhi seluruh ketentuan hukum yang berlaku.</p>
+    <div class="signature-grid"><div class="signature-box"><div>PIHAK PERTAMA / PEMILIK DAN PEMBERI KOMITMEN SAHAM</div><div class="signature-line"></div><strong><span class="blank">Kohan Gunawan</span></strong></div><div class="signature-box"><div>PIHAK KEDUA / PENERIMA KOMITMEN</div><div class="signature-line"></div><strong>Khairunnisa Rahmahdani Danang</strong></div><div class="signature-box"><div>PIHAK KETIGA / PERSEROAN (JIKA MENJADI PIHAK DALAM PERJANJIAN FINAL)</div><div class="signature-line"></div><strong>PT CEKCEPAT GUNANSA EDUKASI</strong><br><span class="blank">Kohan Gunawan</span></div></div>
+   </div>
+  </article>
+ 
+</section>
+
+<section class="section promise-section">
+ <div class="promise-inner"><div class="promise-heart">♡</div><div class="section-kicker">For your 21st chapter</div><h2 class="section-title">Semoga hadiah ini menjadi kado yang istimewa.</h2><p class="promise-quote">“Mungkin aku tidak bisa menjanjika perjalan yang mulus yaa tapi dari perjalanan ini bisa menguatkan kita berdua”</p><button class="btn btn-primary" id="celebrate">Kirim peluk virtual ♡</button></div>
+</section>
+</main>
+<footer><div><div class="footer-brand">PT CEKCEPAT GUNANSA EDUKASI</div><div style="margin-top:4px">Sebuah hadiah ulang tahun · 2 November 2026</div></div><div></div><div><a href="https://portal.ahu.go.id/page/faq" target="_blank" rel="noopener noreferrer">FAQ Ditjen AHU</a> · <a href="https://perpajakan.ddtc.co.id/id/sumber-hukum/peraturan-pusat/peraturan-menteri-hukum-49-tahun-2025" target="_blank" rel="noopener noreferrer">Permenkum 49/2025</a> · <a href="https://www.ojk.go.id/sustainable-finance/id/peraturan/undang-undang/Documents/5.%20UU-40-2007%20PERSEROAN%20TERBATAS.pdf" target="_blank" rel="noopener noreferrer">UU PT</a></div></footer>
+<button class="love-fab" id="heartParty" type="button" aria-label="Sebarkan hati" title="Klik untuk hujan hati"><span class="fab-heart">♥</span><span class="fab-label">Kirim love</span></button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2800)}
+
+  // Browser audio is opt-in: a gentle synthesized chime is created only after a user enables sound.
+  let soundEnabled = false;
+  let audioCtx = null;
+  function ensureAudio(){
+    if(!audioCtx){const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(AudioContextClass)audioCtx=new AudioContextClass();}
+    if(audioCtx && audioCtx.state==='suspended')audioCtx.resume();
+    return audioCtx;
+  }
+  function tone(freq, start, duration, type='sine', volume=0.045){
+    const ctx=ensureAudio();if(!ctx||!soundEnabled)return;
+    const osc=ctx.createOscillator(), gain=ctx.createGain();
+    osc.type=type;osc.frequency.setValueAtTime(freq,ctx.currentTime+start);
+    gain.gain.setValueAtTime(0.0001,ctx.currentTime+start);
+    gain.gain.exponentialRampToValueAtTime(volume,ctx.currentTime+start+0.025);
+    gain.gain.exponentialRampToValueAtTime(0.0001,ctx.currentTime+start+duration);
+    osc.connect(gain);gain.connect(ctx.destination);osc.start(ctx.currentTime+start);osc.stop(ctx.currentTime+start+duration+0.03);
+  }
+  function playChime(kind='click'){
+    if(!soundEnabled)return;
+    if(kind==='celebrate'){tone(523.25,0,.32,'sine',.06);tone(659.25,.12,.35,'sine',.05);tone(783.99,.24,.52,'sine',.045);tone(1046.5,.4,.7,'triangle',.035)}
+    else if(kind==='open'){tone(659.25,0,.35,'sine',.045);tone(880,.11,.48,'triangle',.035)}
+    else if(kind==='heart'){tone(740,0,.18,'sine',.035);tone(988,.07,.26,'sine',.027)}
+    else {tone(587.33,0,.16,'sine',.025);}
+  }
+  const soundToggle=document.getElementById('soundToggle');
+  const soundLabel=document.getElementById('soundLabel');
+  soundToggle.addEventListener('click',()=>{
+    soundEnabled=!soundEnabled;
+    soundToggle.setAttribute('aria-pressed',String(soundEnabled));
+    soundLabel.textContent=soundEnabled?'Suara: Aktif':'Suara: Mati';
+    soundToggle.title=soundEnabled?'Matikan efek suara':'Aktifkan efek suara';
+    if(soundEnabled){ensureAudio();playChime('celebrate');showToast('Efek suara lembut diaktifkan ♫');burstHearts(7)}
+    else showToast('Efek suara dimatikan. Animasi tetap berjalan.');
+  });
+
+  function burstHearts(count, x=null, y=null){
+    const symbols=['♡','♥','💗','💖','✦','✧'];
+    for(let i=0;i<count;i++){
+      const h=document.createElement('span');h.className='heart-float';h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      const startX=x===null?Math.random()*100:Math.max(1,Math.min(99,x+(Math.random()-.5)*28));
+      h.style.left=startX+'vw';
+      if(y!==null){h.style.bottom=Math.max(0,window.innerHeight-y+(Math.random()*30-15))+'px'}
+      h.style.animationDuration=(2.5+Math.random()*2.5)+'s';
+      h.style.fontSize=(15+Math.random()*25)+'px';h.style.color=['#b86e83','#d9a2ad','#d9b779','#8e627d'][Math.floor(Math.random()*4)];
+      document.body.appendChild(h);setTimeout(()=>h.remove(),5300);
+    }
+  }
+
+  // A few slow background hearts create a gentle atmosphere without blocking clicks.
+  function seedAmbientHearts(){
+    const glyphs=['♡','♥','ღ','✧'];
+    for(let i=0;i<9;i++){
+      const h=document.createElement('span');h.className='ambient-heart';h.textContent=glyphs[i%glyphs.length];
+      h.style.setProperty('--left',(5+Math.random()*90)+'vw');
+      h.style.setProperty('--duration',(20+Math.random()*20)+'s');
+      h.style.setProperty('--delay',(-Math.random()*30)+'s');
+      h.style.setProperty('--size',(15+Math.random()*19)+'px');
+      h.style.setProperty('--alpha',(0.12+Math.random()*0.22).toFixed(2));
+      h.style.setProperty('--spin',((Math.random()-.5)*100)+'deg');
+      document.body.appendChild(h);
+    }
+  }
+  seedAmbientHearts();
+
+  document.getElementById('openLetter').addEventListener('click',()=>{
+    document.getElementById('surat').scrollIntoView({behavior:'smooth'});burstHearts(14);playChime('open');
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{if(soundEnabled)playChime('click')}));
+
+  const envelope=document.getElementById('interactiveEnvelope');
+  function openEnvelope(){
+    const isOpen=envelope.classList.toggle('is-open');
+    playChime('open');burstHearts(isOpen?20:8,50,window.innerHeight*.48);
+    if(isOpen)showToast('Satu surat kecil, dengan banyak rasa sayang. ♡');
+  }
+  envelope.addEventListener('click',openEnvelope);
+  envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnvelope()}});
+
+  document.getElementById('celebrate').addEventListener('click',()=>{
+    burstHearts(48);playChime('celebrate');showToast('Selamat ulang tahun ke-21, Sayanggg. Semoga harimu penuh cinta. ♡');
+  });
+  document.getElementById('heartParty').addEventListener('click',e=>{
+    burstHearts(34, e.clientX/window.innerWidth*100, e.clientY);playChime('heart');showToast('Satu hujan hati khusus untuk Icha. ♥');
+  });
+  document.getElementById('copyDraft').addEventListener('click',async()=>{
+    const textToCopy=document.getElementById('draftText').innerText;
+    try{await navigator.clipboard.writeText(textToCopy);showToast('Draf berhasil disalin. Kamu bisa menempelkannya ke dokumen.');playChime('click')}
+    catch(e){const area=document.createElement('textarea');area.value=textToCopy;area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();try{document.execCommand('copy');showToast('Draf berhasil disalin.');playChime('click')}catch(err){showToast('Salin otomatis tidak tersedia. Pilih teks draf lalu salin secara manual.')}area.remove()}
+  });
+  document.getElementById('printDraft').addEventListener('click',()=>{playChime('click');window.print()});
+
+  // Small bursts where the user taps/clicks the background, not on controls or links.
+  document.addEventListener('click',e=>{
+    if(e.target.closest('button,a,.letter-art,input,textarea,select,label'))return;
+    if(Math.random()>.38){const heart=document.createElement('span');heart.className='heart-float';heart.textContent=Math.random()>.45?'♡':'♥';heart.style.left=(e.clientX/window.innerWidth*100)+'vw';heart.style.bottom=(window.innerHeight-e.clientY)+'px';heart.style.animationDuration='2.8s';heart.style.fontSize=(16+Math.random()*13)+'px';document.body.appendChild(heart);setTimeout(()=>heart.remove(),3200)}
+  });
+
+  // Reveal content gently as the page scrolls into view.
+  const revealTargets=document.querySelectorAll('.section-kicker,.section-title,.section-lead,.letter-copy,.gift-card,.step,.draft-paper,.promise-quote');
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('motion-reveal','revealed');observer.unobserve(entry.target)}
+    }),{threshold:.08,rootMargin:'0px 0px -28px 0px'});
+    revealTargets.forEach((el,i)=>{el.classList.add('motion-reveal');if(i%4)el.dataset.delay=String(i%4);observer.observe(el)});
+  }
+</script>
+
+<!-- Tambahan Audio (Tidak mengubah kode asli) -->
+<audio id="bgMusic" src="audio.m4a" loop autoplay hidden></audio>
+<script>
+  // Memastikan audio terputar saat halaman diklik pertama kali (kebijakan browser)
+  document.addEventListener('click', function() {
+    document.getElementById('bgMusic').play().catch(()=>{});
+  }, {once: true});
+  
+  // Menghubungkan audio dengan tombol soundToggle bawaan
+  document.getElementById('soundToggle').addEventListener('click', function() {
+    const bg = document.getElementById('bgMusic');
+    if (soundEnabled) {
+      bg.play();
+    } else {
+      bg.pause();
+    }
+  });
+</script>
+</body>
+</html>
+
+```

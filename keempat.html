@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#261720" />
+<title>Menyatukan Jarak ♡</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+  
+  :root {
+    --bg-dark: #1a0f16;
+    --plum: #392333;
+    --rose: #d99b9d;
+    --gold: #d9b779;
+    --text-muted: #8c7880;
+    --cream: #fff8f0;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg-dark);
+    color: var(--cream);
+    font-family: 'DM Sans', Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 1.5s ease;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Animasi Transisi Selesai */
+  body.success {
+    background: var(--cream);
+    color: var(--plum);
+  }
+
+  /* Bintang Latar Belakang */
+  .stars {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.3) 100%, transparent),
+      radial-gradient(2px 2px at 30% 50%, rgba(255,255,255,0.15) 100%, transparent),
+      radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.4) 100%, transparent),
+      radial-gradient(1.5px 1.5px at 80% 30%, rgba(217,183,121,0.3) 100%, transparent);
+    background-size: 200px 200px;
+    opacity: 0.6;
+    z-index: 0;
+    transition: opacity 1s ease;
+  }
+  body.success .stars { opacity: 0; }
+
+  /* Container Utama */
+  .journey-container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    transition: opacity 1s ease;
+  }
+  body.success .journey-container {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  /* Area Teks Dinamis */
+  .story-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    font-style: italic;
+    color: var(--gold);
+    min-height: 80px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  /* Elemen Peta / Koneksi */
+  .connection-map {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0 10px;
+  }
+
+  .city {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+  
+  .city-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--text-muted);
+    border-radius: 50%;
+    box-shadow: 0 0 10px transparent;
+    transition: all 0.3s ease;
+  }
+  .city.active .city-dot {
+    background: var(--gold);
+    box-shadow: 0 0 15px var(--gold);
+  }
+
+  .city-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+  .city.active .city-name { color: var(--cream); }
+
+  /* Garis Koneksi */
+  .line-track {
+    position: absolute;
+    top: 5px; /* Sejajar dengan dot */
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    z-index: 1;
+  }
+
+  .line-fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: var(--rose);
+    box-shadow: 0 0 10px var(--rose);
+    width: 0%;
+  }
+  .line-fill.left { left: 50%; transform: translateX(-100%); }
+  .line-fill.right { right: 50%; transform: translateX(100%); }
+
+  /* Tombol Heart (Tahan) */
+  .hold-button {
+    width: 90px;
+    height: 90px;
+    background: rgba(217, 155, 157, 0.1);
+    border: 2px solid var(--rose);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    position: relative;
+    color: var(--rose);
+    font-size: 32px;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .hold-button::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    border: 1px solid rgba(217, 155, 157, 0.4);
+    border-radius: 50%;
+    animation: ripple 2s linear infinite;
+    opacity: 0;
+  }
+  .hold-button.is-pressing::before { opacity: 1; }
+  .hold-button.is-pressing {
+    transform: scale(0.95);
+    background: rgba(217, 155, 157, 0.3);
+    box-shadow: 0 0 30px rgba(217, 155, 157, 0.4);
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(0.8); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .instruction {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    animation: pulseText 2s infinite alternate;
+  }
+
+  @keyframes pulseText {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+  /* Flash Putih saat berhasil */
+  .white-flash {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+  }
+  .white-flash.active { opacity: 1; }
+
+</style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div class="journey-container">
+    <div class="story-text" id="storyText">Setiap hubungan punya jarak...</div>
+
+    <div class="connection-map">
+      <div class="line-track">
+        <div class="line-fill left" id="lineLeft"></div>
+        <div class="line-fill right" id="lineRight"></div>
+      </div>
+      
+      <div class="city" id="citySurabaya">
+        <div class="city-dot"></div>
+        <span class="city-name">Surabaya</span>
+        <span style="font-size:0.6rem; color:#8c7880; margin-top:-5px">Kohan</span>
+      </div>
+      
+      <div class="city" id="cityBrisbane">
+        <div class="city-dot"></div>
+        <span class="city-name">Brisbane</span>
+        <span style="font-size:0.6rem; color:#8c7880; margin-top:-5px">Icha</span>
+      </div>
+    </div>
+
+    <div class="hold-button" id="holdBtn">♡</div>
+    <div class="instruction" id="instructionText">Sentuh & Tahan Untuk Menyatukan</div>
+  </div>
+
+  <div class="white-flash" id="whiteFlash"></div>
+
+<script>
+  const holdBtn = document.getElementById('holdBtn');
+  const lineLeft = document.getElementById('lineLeft');
+  const lineRight = document.getElementById('lineRight');
+  const storyText = document.getElementById('storyText');
+  const citySurabaya = document.getElementById('citySurabaya');
+  const cityBrisbane = document.getElementById('cityBrisbane');
+  const instructionText = document.getElementById('instructionText');
+  const whiteFlash = document.getElementById('whiteFlash');
+
+  let holdTimer = null;
+  let progress = 0; // 0 to 100
+  let isPressing = false;
+  let isCompleted = false;
+
+  // Daftar teks yang berubah sesuai persentase tahanan
+  const storyPhases = [
+    { threshold: 0, text: "Setiap hubungan punya jarak..." },
+    { threshold: 20, text: "Sejak 7 November 2024..." },
+    { threshold: 45, text: "Ribuan kilometer memisahkan kita..." },
+    { threshold: 70, text: "Tapi sejauh apa pun itu..." },
+    { threshold: 90, text: "Cinta selalu tahu jalan pulangnya." }
+  ];
+
+  function updateVisuals() {
+    // Memanjangkan garis dari kedua sisi ke tengah (maksimal masing-masing 50% dari lebar track)
+    lineLeft.style.width = `${progress / 2}%`;
+    lineRight.style.width = `${progress / 2}%`;
+
+    // Mengubah teks berdasarkan progress
+    const currentPhase = storyPhases.slice().reverse().find(p => progress >= p.threshold);
+    if (storyText.innerText !== currentPhase.text) {
+      storyText.style.opacity = 0; // fade out text
+      setTimeout(() => {
+        storyText.innerText = currentPhase.text;
+        storyText.style.opacity = 1; // fade in text
+      }, 200);
+    }
+
+    // Aktifkan warna kota jika ditekankan
+    if (progress > 5) {
+      citySurabaya.classList.add('active');
+      cityBrisbane.classList.add('active');
+      instructionText.style.opacity = '0';
+    } else {
+      citySurabaya.classList.remove('active');
+      cityBrisbane.classList.remove('active');
+      instructionText.style.opacity = '1';
+    }
+  }
+
+  function handlePressStart(e) {
+    if (isCompleted) return;
+    if (e.type === 'touchstart') e.preventDefault(); // Mencegah scroll di HP
+    
+    isPressing = true;
+    holdBtn.classList.add('is-pressing');
+    
+    // Loop penambahan progress
+    holdTimer = setInterval(() => {
+      progress += 0.8; // Kecepatan gerak (sesuaikan jika terlalu cepat/lambat)
+      if (progress >= 100) {
+        progress = 100;
+        triggerSuccess();
+      }
+      updateVisuals();
+    }, 30);
+  }
+
+  function handlePressEnd() {
+    if (isCompleted) return;
+    isPressing = false;
+    holdBtn.classList.remove('is-pressing');
+    clearInterval(holdTimer);
+    
+    // Jika dilepas sebelum 100%, kembalikan progress perlahan ke 0
+    holdTimer = setInterval(() => {
+      progress -= 1.5; // Kecepatan mundur
+      if (progress <= 0) {
+        progress = 0;
+        clearInterval(holdTimer);
+      }
+      updateVisuals();
+    }, 20);
+  }
+
+  function triggerSuccess() {
+    isCompleted = true;
+    clearInterval(holdTimer);
+    holdBtn.classList.remove('is-pressing');
+    
+    // Efek ledakan cahaya putih
+    whiteFlash.classList.add('active');
+    
+    // Setelah flash, ubah tema menjadi terang (menuju surat)
+    setTimeout(() => {
+      document.body.classList.add('success');
+      whiteFlash.classList.remove('active');
+    }, 800);
+
+    // Redirect ke halaman surat ulang tahun
+    setTimeout(() => {
+      window.location.href = 'ketiga.html'; // Pindah ke halaman target
+    }, 2500);
+  }
+
+  // Mouse Events (Untuk Laptop/PC)
+  holdBtn.addEventListener('mousedown', handlePressStart);
+  window.addEventListener('mouseup', handlePressEnd);
+
+  // Touch Events (Untuk HP)
+  holdBtn.addEventListener('touchstart', handlePressStart, {passive: false});
+  window.addEventListener('touchend', handlePressEnd);
+  window.addEventListener('touchcancel', handlePressEnd);
+
+</script>
+</body>
+</html>

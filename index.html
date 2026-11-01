@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#24151f" />
+<title>Gerbang Kenangan — Untuk Khairunnisa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+  
+  :root {
+    --ink: #261720;
+    --plum: #392333;
+    --rose: #d99b9d;
+    --cream: #fff8f0;
+    --gold: #d9b779;
+    --muted: #78666f;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', Arial, sans-serif;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 15% 15%, rgba(217,155,157,.16), transparent 34%), 
+                radial-gradient(ellipse at 85% 75%, rgba(217,183,121,.18), transparent 30%), 
+                linear-gradient(135deg, #fff9f2 0%, #f7e9e5 48%, #fff7ed 100%);
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Animasi transisi pindah halaman */
+  body.fade-out {
+    opacity: 0;
+  }
+
+  .sparkle {
+    position: absolute;
+    z-index: 1;
+    color: #c6a16d;
+    opacity: .8;
+    animation: float 5s ease-in-out infinite;
+  }
+  .s1 { top: 20%; left: 20%; font-size: 24px; }
+  .s2 { top: 30%; right: 18%; font-size: 17px; animation-delay: -2s; }
+  .s3 { bottom: 25%; left: 25%; font-size: 14px; animation-delay: -1s; }
+  .s4 { bottom: 30%; right: 22%; font-size: 26px; animation-delay: -3s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0) }
+    50% { transform: translateY(-10px) rotate(15deg) }
+  }
+
+  .lock-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(160, 111, 127, 0.18);
+    border-radius: 24px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 22px 50px rgba(79, 45, 55, 0.08);
+  }
+
+  .icon-lock {
+    font-size: 32px;
+    color: var(--gold);
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    color: var(--plum);
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+  }
+
+  p.subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0 0 30px;
+    line-height: 1.5;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgba(152, 107, 118, 0.24);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--plum);
+    text-align: center;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(217, 183, 121, 0.15);
+  }
+
+  input::placeholder {
+    color: #b5a2ab;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 0;
+    border-radius: 999px;
+    padding: 16px 21px;
+    cursor: pointer;
+    font-weight: 700;
+    background: var(--plum);
+    color: #fff8f1;
+    font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    box-shadow: 0 10px 26px rgba(57, 35, 51, 0.18);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    background: #4b2d42;
+  }
+
+  .error-msg {
+    color: #c95d63;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    min-height: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Animasi getar jika sandi salah */
+  .shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+  }
+
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Efek Bintang Estetik -->
+  <span class="sparkle s1">✧</span>
+  <span class="sparkle s2">✦</span>
+  <span class="sparkle s3">✧</span>
+  <span class="sparkle s4">✦</span>
+
+  <div class="lock-container" id="lockBox">
+    <div class="icon-lock">♡</div>
+    <h1>Untuk Icha</h1>
+    <p class="subtitle">Sebelum kita membuka ceritanya, kapan pertama kali kita bertemu?</p>
+    
+    <div class="input-group">
+      <input type="text" id="passwordInput" placeholder="...." autocomplete="off" />
+    </div>
+    
+    <button class="btn" id="unlockBtn">Buka Surat ✦</button>
+    <div class="error-msg" id="errorMsg"></div>
+  </div>
+
+<script>
+  const unlockBtn = document.getElementById('unlockBtn');
+  const passwordInput = document.getElementById('passwordInput');
+  const errorMsg = document.getElementById('errorMsg');
+  const lockBox = document.getElementById('lockBox');
+
+  // Berbagai variasi jawaban yang dianggap benar agar tidak terlalu kaku
+  const validPasswords = [
+    "7 november 2024",
+    "07 november 2024",
+    "7 november 24",
+    "07 november 24",
+    "7 nov 2024",
+    "07 nov 2024",
+    "7-11-2024",
+    "07-11-2024",
+    "7/11/2024",
+    "07/11/2024"
+  ];
+
+  function checkPassword() {
+    // Ambil input, hilangkan spasi berlebih, dan jadikan huruf kecil
+    const userInput = passwordInput.value.trim().toLowerCase();
+
+    if (validPasswords.includes(userInput)) {
+      // Jika benar, hilangkan pesan error
+      errorMsg.style.opacity = '0';
+      
+      // Ubah teks tombol
+      unlockBtn.innerHTML = "Membuka Kenangan... ♡";
+      unlockBtn.style.background = "#52675c"; // Berubah warna menjadi hijau elegan
+      
+      // Berikan efek fade out pada halaman
+      setTimeout(() => {
+        document.body.classList.add('fade-out');
+      }, 400);
+
+      // Pindah ke halaman surat ulang tahun
+      setTimeout(() => {
+        window.location.href = 'kejutan.html'; // Pindah ke halaman target
+      }, 1500);
+
+    } else {
+      // Jika salah
+      errorMsg.textContent = "Bukan tanggal itu sayang, coba ingat-ingat lagi... ♡";
+      errorMsg.style.opacity = '1';
+      
+      // Berikan efek getar
+      lockBox.classList.remove('shake');
+      void lockBox.offsetWidth; // trigger reflow agar animasi bisa diulang
+      lockBox.classList.add('shake');
+      
+      // Kosongkan input agar bisa diisi ulang
+      passwordInput.value = "";
+      passwordInput.focus();
+    }
+  }
+
+  // Cek saat tombol diklik
+  unlockBtn.addEventListener('click', checkPassword);
+
+  // Cek saat menekan tombol "Enter" di keyboard
+  passwordInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      checkPassword();
+    }
+  });
+</script>
+</body>
+</html>
